@@ -1,6 +1,7 @@
 -----------------------------
 Aplikasi ini menggunakan Flutter & Dart dan bisa di run via VSCode. 
-untuk password sementara 
+
+n/ untuk password sementara 
 username : Riza
 password : 12345
 
