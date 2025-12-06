@@ -164,7 +164,7 @@ class _WisataListPageState extends State<WisataListPage> {
           Expanded(
             child: ListView.separated(
               itemCount: filteredWisata.length,
-              separatorBuilder: (_, __) => const Divider(height: 1),
+              separatorBuilder: (context, index) => const Divider(height: 1),
               itemBuilder: (context, index) {
                 final wisata = filteredWisata[index];
                 return ListTile(
