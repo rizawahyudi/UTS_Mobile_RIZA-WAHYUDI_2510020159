@@ -16,7 +16,7 @@ class WisataDetailPage extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 16 / 9,
-              child: Image.network(wisata.imageUrl, fit: BoxFit.cover),
+              child: Image.network(wisata.imagePath, fit: BoxFit.cover),
             ),
             Padding(
               padding: const EdgeInsets.all(16),

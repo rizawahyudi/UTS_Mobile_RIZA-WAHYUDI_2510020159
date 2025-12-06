@@ -8,7 +8,7 @@ class Wisata {
   final String lokasi;
   final String deskripsiPendek;
   final String deskripsiLengkap;
-  final String imageUrl;
+  final String imagePath;
   final List<String> label;
 
   Wisata({
@@ -16,7 +16,7 @@ class Wisata {
     required this.lokasi,
     required this.deskripsiPendek,
     required this.deskripsiLengkap,
-    required this.imageUrl,
+    required this.imagePath,
     required this.label,
   });
 }
@@ -39,8 +39,7 @@ final List<Wisata> daftarWisata = [
         'sedikit trekking menuju puncak bukit. Di beberapa titik tersedia area parkir dan warung kecil milik warga. '
         'Lokasi Bukit Rimpi di Google Maps dapat diakses melalui tautan berikut:\n'
         'https://maps.app.goo.gl/yZ3X2o9qfLr3p1uD7',
-    imageUrl:
-        'https://indonesiakaya.com/wp-content/uploads/2020/10/bukit_rimpi_1290.jpg',
+    imagePath: 'assets/images/bukit_rimpi.jpg',
     label: ['Bukit', 'Sunrise', 'Savana'],
   ),
   Wisata(
@@ -58,8 +57,7 @@ final List<Wisata> daftarWisata = [
         'Pengunjung juga dapat menikmati pemandangan matahari terbit maupun terbenam tergantung cuaca. '
         'Lokasi Pantai Takisung di Google Maps dapat diakses melalui tautan berikut:\n'
         'https://maps.app.goo.gl/Y8uC6sW6mJg5v2qF9',
-    imageUrl:
-        'https://dutatv.com/wp-content/uploads/2025/04/IMG_20250424_081016-390x220.jpg',
+    imagePath: 'assets/images/pantai_takisung.jpg',
     label: ['Pantai', 'Keluarga'],
   ),
   Wisata(
@@ -79,8 +77,7 @@ final List<Wisata> daftarWisata = [
         'bukti hidupnya tradisi perdagangan sungai masyarakat Banjar. '
         'Lokasi Pasar Terapung Lok Baintan di Google Maps dapat diakses melalui tautan berikut:\n'
         'https://maps.app.goo.gl/yCmfAYJmz2rVqfGk8',
-    imageUrl:
-        'https://www.gotravelaindonesia.com/wp-content/uploads/Pasar-Terapung-Lok-Baintan.jpg',
+    imagePath: 'assets/images/lok_baintan.jpg',
     label: ['Budaya', 'Pasar Terapung'],
   ),
   Wisata(
@@ -99,8 +96,7 @@ final List<Wisata> daftarWisata = [
         'Menara Pandang dapat dijangkau dengan mudah karena berada di pusat kota Banjarmasin, dekat dengan fasilitas umum dan '
         'penginapan. Lokasi Menara Pandang Banjarmasin di Google Maps dapat diakses melalui tautan berikut:\n'
         'https://maps.app.goo.gl/CiF4M1wK3GJgV4sC6',
-    imageUrl:
-        'https://indonesiakaya.com/wp-content/uploads/2023/05/Menara-Pandang-Banjarmasin-2.jpeg',
+    imagePath: 'assets/images/menara_pandang.jpg',
     label: ['Kota', 'Sungai', 'Ikon'],
   ),
 ];
@@ -168,14 +164,14 @@ class _WisataListPageState extends State<WisataListPage> {
           Expanded(
             child: ListView.separated(
               itemCount: filteredWisata.length,
-              separatorBuilder: (context, index) => const Divider(height: 1),
+              separatorBuilder: (_, __) => const Divider(height: 1),
               itemBuilder: (context, index) {
                 final wisata = filteredWisata[index];
                 return ListTile(
                   leading: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
-                    child: Image.network(
-                      wisata.imageUrl,
+                    child: Image.asset(
+                      wisata.imagePath,
                       width: 60,
                       height: 60,
                       fit: BoxFit.cover,
